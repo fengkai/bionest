@@ -1,0 +1,9 @@
+plugins{
+	id "java-library"
+}
+
+description 'Bionsest User Types'
+
+dependencies {
+	
+}

@@ -1,0 +1,53 @@
+plugins{
+	id "java-library"
+//	id 'com.google.protobuf' version '0.8.17'
+}
+
+//sourceSets {
+//	main {
+//		java {
+//			srcDirs 'build/generated/source/proto/main/grpc'
+//			srcDirs 'build/generated/source/proto/main/java'
+//		}
+//		resources {
+//			srcDirs 'src/main/resources'
+//		}
+//	}
+//}
+
+//protobuf {
+//	protoc {
+//		artifact = "com.google.protobuf:protoc:3.17.2"
+//	}
+//	plugins {
+//		grpc {
+//			artifact = 'io.grpc:protoc-gen-grpc-java:1.39.0'
+//		}
+//	}
+//	generateProtoTasks {
+//		all()*.plugins {
+//			grpc {}
+//		}
+//	}
+//}
+
+description "Samples"
+
+dependencies{
+//	implementation 'io.grpc:grpc-netty-shaded:1.39.0'
+//	implementation 'io.grpc:grpc-protobuf:1.39.0'
+//	implementation 'io.grpc:grpc-stub:1.39.0'
+//	implementation 'io.grpc:grpc-grpclb:1.39.0'
+//	implementation "com.google.protobuf:protobuf-java-util:3.17.2"
+//	implementation 'org.apache.zookeeper:zookeeper:3.4.8'
+
+	implementation 'org.projectlombok:lombok'
+
+	implementation("com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config")
+	implementation("org.springframework.boot:spring-boot-starter-web")
+
+}
+
+test {
+	useJUnitPlatform()
+}

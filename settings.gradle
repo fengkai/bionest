@@ -1,0 +1,26 @@
+pluginManagement {
+	repositories {
+		maven {
+			url 'https://maven.aliyun.com/repository/gradle-plugin'
+		}
+		gradlePluginPortal()
+	}
+}
+
+include "user"
+include "user:user-domain"
+include "user:user-types"
+include "user:user-application"
+include "user:user-web"
+include "user:user-start"
+include "user:user-infrastructure:user-persistence"
+include "boot"
+include "autoconfigure"
+include "samples"
+
+rootProject.name = 'bionest'
+
+rootProject.children.each {project ->
+//	project.buildFileName = "bionest-${project.name}.gradle"
+	project.buildFileName = "build.gradle"
+}

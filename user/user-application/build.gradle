@@ -1,0 +1,11 @@
+plugins{
+	id "java-library"
+}
+
+description 'Bionsest User Types'
+
+dependencies {
+	compile(project(":user:user-domain"))
+	implementation("org.springframework:spring-tx")
+	implementation("org.springframework:spring-context")
+}

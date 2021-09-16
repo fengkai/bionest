@@ -1,0 +1,17 @@
+plugins{
+	id "java"
+}
+
+description "Bionest Boot"
+
+dependencies{
+	implementation("org.projectlombok:lombok")
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
+	compileOnly("org.springframework:spring-core")
+}
+
+test {
+	useJUnitPlatform()
+}
+
+

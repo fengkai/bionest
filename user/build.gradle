@@ -1,0 +1,17 @@
+description 'Bionsest User Module'
+
+
+subprojects {
+
+	apply plugin: 'java'
+
+	dependencies {
+		implementation("org.projectlombok:lombok")
+		annotationProcessor 'org.projectlombok:lombok:1.18.20'
+		implementation("org.mapstruct:mapstruct:1.4.2.Final")
+		annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+		compileOnly("org.springframework:spring-core")
+		compileOnly(project(":boot"))
+	}
+
+}

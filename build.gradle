@@ -1,0 +1,51 @@
+buildscript {
+	repositories {
+		maven { url 'https://maven.aliyun.com/repository/central' }
+	}
+}
+
+plugins {
+//	id 'org.springframework.boot' version '2.2.5.RELEASE' apply false
+	id 'org.springframework.boot' version '2.4.9' apply false
+//	id 'org.springframework.boot' version '2.4.2' apply false
+}
+
+description 'Bionest'
+
+subprojects {
+	plugins.withType(JavaPlugin) {
+		project.sourceCompatibility = '1.8'
+	}
+	tasks.withType(JavaCompile) {
+		options.encoding = "UTF-8"
+	}
+
+}
+
+ext {
+	// Spring cloud version
+	set('springCloudVersion', "2020.0.1")
+	set('alibabaCloudVersion', "2021.1")
+}
+
+configure(allprojects) { project ->
+	group "com.zkteco.bionest"
+
+	repositories {
+		maven { url 'https://maven.aliyun.com/repository/central' }
+	}
+	// 所有项目导入spring boot bom版本声明
+	apply plugin: "io.spring.dependency-management"
+	dependencyManagement {
+        imports {
+            mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+			mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+			mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${alibabaCloudVersion}"
+        }
+
+		dependencies {
+			dependency "org.projectlombok:lombok:1.18.20"
+		}
+
+    }
+}
